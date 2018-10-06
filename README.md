@@ -1,0 +1,1 @@
+Template for web applications with Go, inspired by Rails
