@@ -22,6 +22,7 @@ func main() {
 	defer l.Close()
 
 	r := echo.New()
+	r.Use(middleware.Static("public"))
 	r.Use(middleware.Logger())
 	r.Use(middleware.Recover())
 
