@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/h00s/go-web-app/config"
+	"github.com/h00s/go-web-app/db"
 	"github.com/h00s/go-web-app/logger"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -20,6 +21,16 @@ func main() {
 		log.Fatal(err)
 	}
 	defer l.Close()
+
+	db, err := db.Connect(c.Database)
+	if err != nil {
+		l.Fatal(err.Error())
+	}
+
+	err = db.Migrate()
+	if err != nil {
+		l.Fatal(err.Error())
+	}
 
 	r := echo.New()
 	r.Use(middleware.Static("public"))

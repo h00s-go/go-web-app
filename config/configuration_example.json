@@ -5,5 +5,12 @@
   },
   "log": {
     "filename": "log/go-web-app.log"
-  }
+  },
+  "database": {
+    "host": "localhost",
+    "port": "5432",
+    "user": "dev",
+    "password": "dev",
+    "name": "go_web_app"
+  }  
 }

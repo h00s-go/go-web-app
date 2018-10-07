@@ -1,4 +1,5 @@
 go-web-app
 config/configuration.json
+config/configuration_test.json
 logger/logger_test.log
 log/*
